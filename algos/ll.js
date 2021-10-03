@@ -20,7 +20,6 @@ function linkedList(){
 	
 	
 	return ({
-	
 		amend: function(value){
 			const node = new Node(value);
 			
@@ -31,14 +30,30 @@ function linkedList(){
 			else {
 				tail.next_value = node;
 				tail = node;
-				length += 1;
-				
+				length += 1;	
 			}
-		
+			
+			this.print()	
+		},
+		prepend: function(value){
+			const node = new Node(value);
+			
+			if(length === 0){
+				head = tail = node;
+				length += 1;
+			}
+			else {
+				const temp = head;
+				head = node;
+				head.next_value = temp;
+				length += 1;
+			}
+			
+			this.print()
 		},
 	
 		print: function(){ if(length > 0){
-			console.log(`HEAD: ${head.value}| HEAD NEXT VALUE: ${head.next_value.value} TAIL: ${tail.value}| LENGTH: ${length}|`)
+			console.log(`HEAD: ${head.value}| HEAD NEXT VALUE: ${head.next_value.value}| TAIL: ${tail.value}| LENGTH: ${length}|`)
 		
 		}
 	}
@@ -47,9 +62,6 @@ function linkedList(){
 }
 
 const ll = linkedList();
-ll.print()
 ll.amend(3)
-ll.print()
 ll.amend(4)
-
-ll.print()
+ll.prepend(2)
