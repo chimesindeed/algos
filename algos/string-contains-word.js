@@ -1,6 +1,7 @@
 // string contains word
 
 function stringContainsWord(string, word){
+	string = string.replace(".", " ")
 
 	return string.split(" ").includes(word)
 }
