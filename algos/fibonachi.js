@@ -8,3 +8,5 @@ function fib(n) {
 
 console.log(fib(7))
 console.log(fib(6))
+
+// Note: time complexity can be improved with MEMOIZATION
